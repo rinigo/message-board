@@ -1,3 +1,12 @@
+<style>
+  /* forms */
+
+input,textarea{
+   height: 24px;
+  float: center
+}
+
+</style>
 <%= form_for(@message) do |f| %>
   <% if @message.errors.present? %>
     <div class="alert alert-danger">
@@ -11,14 +20,15 @@
       </ul>
     </div>
   <% end %>
-
+<div class="form-text">
   名前:
-  <%= f.text_field :name %>
+  <%= f.text_area :name %>
 
   内容:
-  <%= f.text_field :body %>
+  <%= f.text_area :body %>
   
   年齢:
-  <%= f.text_field :age %>
+  <%= f.text_area :age %>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
+</div>
